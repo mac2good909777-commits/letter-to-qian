@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>給謙 — 關於你的球員卡，和接下來四年</title>
+<meta name="description" content="一份給國三兒子的分析：撿漏與通路的差別、為什麼這個模式放大不了、以及接下來四年真正該累積的東西。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F5F0;
+  --card:#FFFDF9;
+  --ink:#1B2A3A;
+  --ink-soft:#5A6572;
+  --line:#DED9CE;
+  --line-soft:#EBE7DE;
+  --leather:#B5451F;
+  --court:#2E6552;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px;
+  line-height:1.85;
+  letter-spacing:.01em;
+}
+.wrap{max-width:34rem;margin:0 auto;padding:0 1.35rem 5rem}
+
+/* ---------- hero ---------- */
+.hero{padding:3.2rem 0 1.6rem;border-bottom:1px solid var(--line)}
+.to{
+  font-family:"Noto Serif TC",serif;
+  font-size:.95rem;color:var(--leather);
+  letter-spacing:.28em;margin:0 0 1rem;
+}
+h1{
+  font-family:"Noto Serif TC",serif;
+  font-weight:700;font-size:2rem;line-height:1.45;
+  margin:0 0 1.1rem;letter-spacing:.01em;
+}
+.lede{color:var(--ink-soft);margin:0;font-size:1rem}
+
+/* ---------- stat table (card back) ---------- */
+.record{
+  margin:2.2rem 0 0;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-top:4px solid var(--leather);
+}
+.record h2{
+  font-family:"Noto Serif TC",serif;font-size:1rem;font-weight:500;
+  margin:0;padding:.85rem 1.1rem;border-bottom:1px solid var(--line-soft);
+  color:var(--ink-soft);
+}
+.record dl{margin:0;padding:.4rem 1.1rem 1rem}
+.record div{
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  padding:.55rem 0;border-bottom:1px solid var(--line-soft);
+}
+.record div:last-child{border-bottom:0}
+.record dt{margin:0;color:var(--ink-soft);font-size:.92rem;white-space:nowrap}
+.record dd{
+  margin:0;text-align:right;
+  font-family:"Noto Serif TC",serif;font-weight:700;font-size:1.08rem;
+  font-variant-numeric:tabular-nums;
+}
+.record .calc{
+  padding:.85rem 1.1rem;background:#F2EFE8;border-top:1px solid var(--line-soft);
+  font-size:.9rem;color:var(--ink-soft);
+}
+
+/* ---------- sections ---------- */
+section{padding:2.8rem 0 0}
+h2.sec{
+  font-family:"Noto Serif TC",serif;font-weight:700;
+  font-size:1.38rem;line-height:1.5;margin:0 0 .4rem;
+}
+.sub{color:var(--ink-soft);font-size:.95rem;margin:0 0 1.4rem}
+p{margin:0 0 1.15rem}
+strong{font-weight:700}
+.hl{background:linear-gradient(transparent 62%, #F0DFC8 62%);font-weight:500}
+
+/* right / wrong marks */
+ol.right{list-style:none;margin:0;padding:0;counter-reset:r}
+ol.right li{
+  counter-increment:r;position:relative;
+  padding:0 0 1.3rem 2.2rem;
+}
+ol.right li::before{
+  content:counter(r);position:absolute;left:0;top:.15rem;
+  width:1.5rem;height:1.5rem;border-radius:50%;
+  background:var(--court);color:#fff;
+  font-size:.82rem;line-height:1.5rem;text-align:center;font-weight:700;
+}
+ol.right b{display:block;font-weight:700;margin-bottom:.15rem}
+
+/* comparison */
+.vs{margin:1.4rem 0 .6rem}
+.vs div{
+  border-left:3px solid var(--line);
+  padding:.1rem 0 .1rem 1rem;margin-bottom:1.5rem;
+}
+.vs div.a{border-left-color:var(--leather)}
+.vs div.b{border-left-color:var(--court)}
+.vs h3{
+  font-family:"Noto Serif TC",serif;font-size:1.05rem;margin:0 0 .35rem;
+}
+.vs p{margin:0 0 .5rem;font-size:.97rem}
+.vs p:last-child{margin-bottom:0}
+
+/* ceilings */
+ul.plain{margin:0 0 1.2rem;padding-left:1.15rem}
+ul.plain li{margin-bottom:.75rem}
+
+/* timeline */
+.tl{margin:1.2rem 0 0;border-left:2px solid var(--line);padding-left:1.25rem}
+.tl div{position:relative;padding-bottom:1.5rem}
+.tl div::before{
+  content:"";position:absolute;left:-1.66rem;top:.6rem;
+  width:.62rem;height:.62rem;border-radius:50%;
+  background:var(--paper);border:2px solid var(--line);
+}
+.tl div.now::before,.tl div.key::before{background:var(--leather);border-color:var(--leather)}
+.tl time{
+  display:block;font-family:"Noto Serif TC",serif;font-weight:700;
+  font-size:.95rem;font-variant-numeric:tabular-nums;
+}
+.tl span{display:block;color:var(--ink-soft);font-size:.94rem}
+.tl div.key time{color:var(--leather)}
+
+/* ledger */
+.ledger{
+  background:var(--card);border:1px solid var(--line);
+  padding:1rem 1.15rem;margin:1.2rem 0 1.3rem;
+  font-size:.95rem;
+}
+.ledger b{display:block;margin-bottom:.5rem;font-family:"Noto Serif TC",serif}
+.ledger ol{margin:0;padding-left:1.3rem}
+.ledger li{margin-bottom:.2rem}
+
+/* steps */
+.step{margin-bottom:1.6rem;padding-left:1rem;border-left:2px solid var(--line-soft)}
+.step h3{
+  font-family:"Noto Serif TC",serif;font-size:1.02rem;margin:0 0 .3rem;
+}
+.step p{margin:0;font-size:.97rem;color:var(--ink-soft)}
+.step:last-of-type{border-left-color:var(--leather)}
+
+/* errata */
+.errata{border-top:1px solid var(--line);margin-top:1.4rem;padding-top:.4rem}
+.errata div{padding:1.15rem 0;border-bottom:1px solid var(--line-soft)}
+.errata h3{
+  font-family:"Noto Serif TC",serif;font-size:1rem;margin:0 0 .35rem;
+  color:var(--leather);
+}
+.errata p{margin:0;font-size:.96rem}
+
+/* closing */
+.close{
+  margin-top:3rem;padding:1.8rem 1.35rem;
+  background:var(--card);border:1px solid var(--line);border-top:4px solid var(--court);
+}
+.close p{font-size:1rem}
+.close p:last-child{margin-bottom:0}
+.sign{
+  margin-top:1.6rem;font-family:"Noto Serif TC",serif;
+  color:var(--ink-soft);font-size:.95rem;
+}
+@media (min-width:700px){
+  body{font-size:18px}
+  h1{font-size:2.5rem}
+  .wrap{padding-bottom:6rem}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <p class="to">給　謙</p>
+  <h1>關於你的球員卡，<br>和接下來的四年</h1>
+  <p class="lede">這份東西有分析、有建議，也有我可能講錯的地方。最後一節我把自己說過但不一定對的話列出來了——你可以自己去查，查完覺得我錯，就來跟我說。</p>
+</header>
+
+<div class="record">
+  <h2>你的四年紀錄</h2>
+  <dl>
+    <div><dt>經營期間</dt><dd>小六 – 國三</dd></div>
+    <div><dt>累計獲利</dt><dd>約 NT$100,000</dd></div>
+    <div><dt>單筆進貨區間</dt><dd>NT$100 – 3,000</dd></div>
+    <div><dt>毛利率</dt><dd>40 – 50%</dd></div>
+    <div><dt>每週投入</dt><dd>4 – 5 小時</dd></div>
+    <div><dt>估計成交筆數</dt><dd>200 筆以上</dd></div>
+  </dl>
+  <p class="calc">換算下來時薪大約 NT$280。這個數字本身不重要，重要的是它怎麼來的。</p>
+</div>
+
+<section>
+  <h2 class="sec">你做對的五件事</h2>
+  <p class="sub">這不是客套話。這五件裡有三件，很多成年人做一輩子生意都做不到。</p>
+
+  <ol class="right">
+    <li>
+      <b>你自己找到了套利的本質</b>
+      沒有人教你。你發現「同一張卡，在不同的人手上價值不一樣」，然後你去賺那個差。這是商業最原始的形態，而你是自己摸出來的。
+    </li>
+    <li>
+      <b>你用了正確的定價錨點</b>
+      你拿 eBay 當基準，再反推台灣能接受的價格。這叫跨市場定價，是真的方法，不是猜。多數人做二手買賣是憑感覺喊價，你不是。
+    </li>
+    <li>
+      <b>你控制了風險</b>
+      單筆壓在 100 到 3,000。就算看走眼，也傷不到本金。這叫部位控制，是專業投資人的紀律，你在小六就自己做到了。
+    </li>
+    <li>
+      <b>你撐了四年</b>
+      大部分人的副業活不過三個月。四年不中斷，這件事比 10 萬塊值錢得多。
+    </li>
+    <li>
+      <b>你的知識是真的</b>
+      你對球員發展的判斷不是興趣，是可以換錢的資訊優勢。你已經驗證過了——40 到 50% 的毛利就是證據。
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2 class="sec">撿漏與通路</h2>
+  <p class="sub">我一直跟你說這個模式放大不了。這一節是完整的理由。</p>
+
+  <p>做買賣只有兩種賺錢方式，你現在做的是第一種。</p>
+
+  <div class="vs">
+    <div class="a">
+      <h3>撿漏：賺資訊落差</h3>
+      <p>你賺的是「對方不知道這張卡值多少」。單筆利潤很高——你的 40 到 50% 在零售業是誇張的數字，便利商店的毛利大概 30%。</p>
+      <p>但每一筆都要重新找人、重新判斷、重新談。這一筆賺完，跟下一筆沒有關係，你等於每次都從零開始。</p>
+    </div>
+    <div class="b">
+      <h3>通路：賺重複發生</h3>
+      <p>通路是你控制了一條「買方會固定回來找你」的路徑。單筆利潤低很多，可能只有 10 到 15%。</p>
+      <p>但它會自己重複，可以交給別人做，而且做得越久越容易。你今天談下來的客戶，明年還在。</p>
+    </div>
+  </div>
+
+  <p><span class="hl">能不能放大，關鍵不在賺多少，在於「沒有你本人在場，它還轉不轉得動」。</span>撿漏的核心能力長在你腦子裡，所以沒辦法交給別人，也就沒辦法放大。這不是你哪裡做不夠好，是這個模式的結構就是這樣。</p>
+</section>
+
+<section>
+  <h2 class="sec">三個天花板</h2>
+
+  <ul class="plain">
+    <li><b>池子是固定的。</b>台灣願意賤賣 NBA 卡的賣家，數量有上限。你已經在吃這個池子了。要做十倍，不是你不夠努力，是魚不夠。</li>
+    <li><b>判斷力外包不了。</b>你請一個人幫你收卡，他沒有你的知識，會買錯。要教會他，時間成本比你自己做還高。</li>
+    <li><b>時間是唯一的產能。</b>你的產出 ≈ 你的時數 × 遇到好貨的機率。兩個變數都有天花板，而你接下來幾年的時數只會變少，不會變多。</li>
+  </ul>
+
+  <p>還有一件事要講清楚：2021 年前後卡片市場有過一波泡沫，之後整體價格就沒回到高點。這不是一個正在長大的市場。（這句是我的印象，你可以自己去查最新的，查到不一樣就跟我說。）</p>
+</section>
+
+<section>
+  <h2 class="sec">但這完全不是壞消息</h2>
+
+  <p>放大不了的是「這個模式」，不是「你的能力」。</p>
+
+  <p>撿漏的本質是：<strong>在別人看不出價值的地方看出價值</strong>。這個能力在任何一個產業都值錢，而且越貴的東西越值錢。差別只在你把它用在什麼標的上。</p>
+
+  <p>爸爸做工業地產，說穿了做的是同一件事——賣方不清楚自己的土地或廠房值多少，買方不知道哪裡有適合他的物件，我賺的就是那個資訊落差。邏輯跟你一模一樣。<span class="hl">唯一的差別是一筆的量級。</span></p>
+
+  <p>所以你現在練的東西沒有白費，它只是還沒有遇到夠大的標的。而要遇到那種標的，需要的不是更多卡片，是更多年的準備。</p>
+</section>
+
+<section>
+  <h2 class="sec">接下來四年長什麼樣</h2>
+  <p class="sub">先看清楚時間，再決定力氣要花在哪。</p>
+
+  <div class="tl">
+    <div class="now">
+      <time>2026 年 9 月　現在</time>
+      <span>國三上。距離會考剩約 8 個月。</span>
+    </div>
+    <div>
+      <time>2027 年 5 月</time>
+      <span>會考。</span>
+    </div>
+    <div class="key">
+      <time>2027 年 6 – 8 月</time>
+      <span>會考後的暑假。這是接下來四年唯一一段「時間自由、壓力最低、手上資料最完整」的時期。</span>
+    </div>
+    <div>
+      <time>2027 年 9 月</time>
+      <span>高一入學。學習歷程檔案從這一年開始採計。</span>
+    </div>
+    <div>
+      <time>2030 年 1 月</time>
+      <span>學測。</span>
+    </div>
+    <div>
+      <time>2030 年 春</time>
+      <span>申請入學。前面四年的東西，在這裡一次結算。</span>
+    </div>
+  </div>
+
+  <p style="margin-top:.6rem">重點在那個 2027 年的暑假。學習歷程檔案高一才開始算，但高一能交出什麼，取決於高一<em>之前</em>你手上已經有什麼。大部分同學是高一才開始想題目，所以只能交出剛起步的東西。你可以交出七年。</p>
+</section>
+
+<section>
+  <h2 class="sec">現在到會考：只做一件事</h2>
+
+  <p>生意不用停，但壓到每週 1 到 2 小時，金額不要加碼，只接送上門的。理由不是「讀書比較重要」這種話，是算出來的：這 8 個月裡，一小時讀書的價值遠高於一小時找卡。</p>
+
+  <p>唯一要新增的動作是記帳。每成交一筆，在手機上填七欄，30 秒。</p>
+
+  <div class="ledger">
+    <b>七欄</b>
+    <ol>
+      <li>球員</li>
+      <li>卡種／系列</li>
+      <li>編號（限量序號、有沒有簽、有沒有球衣）</li>
+      <li>eBay 成交價（不是上架價）</li>
+      <li>你的購入價</li>
+      <li>你的售出價</li>
+      <li>買入日期與賣出日期</li>
+    </ol>
+  </div>
+
+  <p>為什麼是這件事：<span class="hl">這是唯一一樣補不回來的東西。</span>知識可以之後再學，錢可以之後再賺，但今天成交的價格，過了就消失了。八個月後你會有將近四年的資料，那時候我們要拿它來做真正的東西。</p>
+
+  <p>還有一條規則，這條沒得商量：面交是整件事裡風險最高的環節，比賠錢高太多了。單筆超過一千，或對方要求私下見面，你跟我講，我陪你去，或者改走店到店。</p>
+</section>
+
+<section>
+  <h2 class="sec">會考後的暑假：四個階段</h2>
+  <p class="sub">這一段的目的不是賺錢，是讓你習慣用 AI 解自己真正在乎的問題。</p>
+
+  <div class="step">
+    <h3>第一階　把資料整理起來</h3>
+    <p>用 Claude 把你的紀錄整理成一張 Google Sheet，讓它幫你寫公式。你會發現整理資料原來不用自己動手。</p>
+  </div>
+  <div class="step">
+    <h3>第二階　問它你原本靠感覺回答的問題</h3>
+    <p>「我這兩百筆裡哪個價格帶報酬率最高？」「持有天數跟毛利有沒有關係？」「哪一個系列我最常看走眼？」這一步你會第一次體驗到：資料回答了直覺回答不了的事。</p>
+  </div>
+  <div class="step">
+    <h3>第三階　讓它帶你寫程式</h3>
+    <p>一小段 Python，把分布畫成圖。你不需要先會寫，你需要的是知道「這件事可以被做出來」。</p>
+  </div>
+  <div class="step">
+    <h3>第四階　抓到它講錯</h3>
+    <p>這一步最重要。AI 會用非常肯定的語氣講錯話。而卡片行情你懂，所以你抓得到。<strong>會用 AI 的人很多，知道它什麼時候在唬爛的人很少。</strong>這個差距，比前面三階加起來都值錢。</p>
+  </div>
+
+  <p>做完這四階，你手上會有一份成品可以帶進高一。但那是副產品。真正拿到的是提問、拆解、驗證這三件事，而它們是順著你自己的興趣長出來的，不是被逼的。</p>
+</section>
+
+<section>
+  <h2 class="sec">爸爸講過但不一定對的話</h2>
+  <p class="sub">我列這一節，是因為這比前面所有建議都重要：你要有能力判斷我對不對。</p>
+
+  <div class="errata">
+    <div>
+      <h3>「第一份工作的起薪會決定一輩子」</h3>
+      <p>我跟你講過這句，它不完全對。起薪確實有長期影響，但真正的機制不是那個數字，是<strong>你進得去哪個產業、哪一層組織</strong>。同樣五萬的起薪，在不同產業五年後可以差三倍。起薪只是結果，不是原因。我把代理指標講成了原因。</p>
+    </div>
+    <div>
+      <h3>我一開始搞錯你的年級</h3>
+      <p>我先以為你高二，整個時間軸算錯，建議也跟著錯。這件事本身就是例子：前提錯了，後面推得再漂亮都沒用。你以後聽任何人講話——包括我——第一件事是檢查他的前提對不對。</p>
+    </div>
+    <div>
+      <h3>「學習歷程檔案很重要」</h3>
+      <p>它是申請入學的一部分，但權重沒有大到可以取代學測成績和科系選擇。而且升學制度會改，四年後的規則不一定是現在這樣。到時候要重查。</p>
+    </div>
+    <div>
+      <h3>「鑑定送評有套利空間」</h3>
+      <p>這是趨勢判斷，不是保證。送評要錢、要等好幾個月、結果不確定，而且台灣要透過代送。如果要試，最多兩三張，當學費，不要當策略。</p>
+    </div>
+    <div>
+      <h3>「跨境進口不划算」</h3>
+      <p>這是用你現在的價格帶算的：單張運費攤不平。如果哪天你做到單張五千以上，這個結論就要重算。結論會過期，算法不會。</p>
+    </div>
+  </div>
+
+  <p style="margin-top:1.4rem">我講錯沒關係，AI 講錯也沒關係。<span class="hl">會出事的是「沒有人去驗」。</span>所以我真正希望你帶走的不是上面任何一條建議，是這個習慣：聽到一個說法，先問它的前提是什麼、資料從哪來、什麼情況下會不成立。</p>
+</section>
+
+<div class="close">
+  <p>最後講一段不理性的。</p>
+  <p>你小六的時候，自己找到一件事、自己想出方法、自己扛著做了四年——這件事我到現在還會跟別人講。不是因為你賺了十萬，是因為我看過太多人到三四十歲都還在等別人給他一條路。</p>
+  <p>接下來這幾年，我要你把這門生意收小，不是因為它不好，是因為<strong>它已經教完它能教你的事了</strong>。再多收一百張卡，你學不到新東西；但把它變成資料、變成方法、變成你會用的工具，它可以再陪你十年。</p>
+  <p>賺到的錢會花掉。這四年練出來的判斷力不會。</p>
+  <p class="sign">爸爸　2026.09</p>
+</div>
+
+</div>
+</body>
+</html>
